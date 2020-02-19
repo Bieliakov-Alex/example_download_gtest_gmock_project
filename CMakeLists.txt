@@ -14,4 +14,8 @@ download_project(PROJ           googletest
 
 add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 
-add_executable(${PROJECT_NAME} src/impl/main.cpp)
+include_directories(include src/incl)
+
+add_executable(${PROJECT_NAME} src/impl/main.cpp
+                               src/impl/formula.cpp
+)
