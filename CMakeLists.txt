@@ -14,8 +14,16 @@ download_project(PROJ           googletest
 
 add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 
-include_directories(include src/incl)
+include_directories(include)
 
-add_executable(${PROJECT_NAME} src/impl/main.cpp
-                               src/impl/formula.cpp
+add_library(${PROJECT_NAME}_core STATIC src/impl/formula.cpp
+                                        src/impl/formula_factory.cpp
 )
+
+target_include_directories(${PROJECT_NAME}_core PUBLIC  include/
+                                                PRIVATE src/incl/
+)
+
+add_executable(${PROJECT_NAME} src/impl/main.cpp)
+
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}_core)
