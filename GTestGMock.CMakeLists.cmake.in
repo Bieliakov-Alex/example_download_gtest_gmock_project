@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10.0)
+
+project(${GTEST_GMOCK_PROJECT}-download NONE)
+
+include(ExternalProject)
+ExternalProject_Add(${GTEST_GMOCK_PROJECT}-download
+                    GIT_REPOSITORY ${GTEST_GMOCK_GIT_REPOSITORY}
+                    GIT_TAG ${GTEST_GMOCK_GIT_TAG}
+                    ${UPDATE_DISCONNECTED_IF_AVAILABLE}
+                    SOURCE_DIR "${GTEST_GMOCK_SOURCE_DIR}"
+                    BINARY_DIR "${GTEST_GMOCK_BINARY_DIR}"
+                    CONFIGURE_COMMAND   ""
+                    BUILD_COMMAND       ""
+                    INSTALL_COMMAND     ""
+                    TEST_COMMAND        ""
+)
