@@ -9,7 +9,6 @@ target_include_directories(${LIB_NAME} INTERFACE ${PROJECT_SOURCE_DIR}/mocks_inc
 target_link_libraries(${LIB_NAME} INTERFACE DownloadGTestGMock_core)
 set(PRIVATE_HEADERS $<TARGET_PROPERTY:DownloadGTestGMock_core,INCLUDE_DIRECTORIES>)
 
-
 add_executable(${PROJECT_NAME} formula_test.cpp
                                big_formula_test.cpp
 )

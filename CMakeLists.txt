@@ -3,7 +3,6 @@ project(DownloadGTestGMock)
 
 include(CTest)
 
-set(UPDATE_DISCONNECTED_IF_AVAILABLE "UPDATE_DISCONNECTED 1")
 set(CMAKE_CXX_STANDARD 14)
 
 set(GTEST_GMOCK_PROJECT "googletest")
